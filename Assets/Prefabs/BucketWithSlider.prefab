@@ -196,10 +196,10 @@ RectTransform:
   m_Father: {fileID: 3649293108598435265}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: -5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 1}
+  m_AnchoredPosition: {x: 0, y: -5}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2514713080313407403
 GameObject:
@@ -235,7 +235,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_SizeDelta: {x: 0, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2929598866335816304
 GameObject:
@@ -249,7 +249,7 @@ GameObject:
   - component: {fileID: 3692904568647163886}
   m_Layer: 5
   m_Name: Slider
-  m_TagString: Untagged
+  m_TagString: slider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -261,20 +261,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2929598866335816304}
-  m_LocalRotation: {x: -0.3796154, y: -0.37896124, z: 0.5946993, w: 0.59884334}
-  m_LocalPosition: {x: 0, y: 0, z: 609.96}
-  m_LocalScale: {x: 0.024793036, y: 0.046694696, z: 0.78781015}
+  m_LocalRotation: {x: 0.002584569, y: 0.0053772326, z: 0.70552737, w: 0.7086577}
+  m_LocalPosition: {x: 0, y: 0, z: -268.6}
+  m_LocalScale: {x: 0.88999945, y: 0.8899999, z: 0.7878102}
   m_Children:
   - {fileID: 8881675119777002015}
   - {fileID: 2463577603193336951}
   - {fileID: 6775974707941943029}
   m_Father: {fileID: 4682765928337194809}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.22500001, y: -64.87701, z: 89.745}
+  m_LocalEulerAnglesHint: {x: -0.225, y: 0.646, z: 89.745}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 136.49, y: -117.54}
-  m_SizeDelta: {x: 160, y: 20}
+  m_AnchoredPosition: {x: 7.7, y: 65.4}
+  m_SizeDelta: {x: 20, y: 160}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3692904568647163886
 MonoBehaviour:
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8395388342928174303}
   m_FillRect: {fileID: 7749022740874694634}
   m_HandleRect: {fileID: 7123280767579108926}
-  m_Direction: 0
+  m_Direction: 2
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -361,7 +361,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 0, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6505759241934827796
 CanvasRenderer:
@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -432,8 +433,8 @@ RectTransform:
   m_Father: {fileID: 3649293108598435265}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.25}
-  m_AnchorMax: {x: 1, y: 0.75}
+  m_AnchorMin: {x: 0.25, y: 0}
+  m_AnchorMax: {x: 0.75, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -460,6 +461,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -535,6 +537,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
@@ -559,6 +562,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!64 &6250601762363984772
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -667,7 +671,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_SizeDelta: {x: 0, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2011940801165134564
 CanvasRenderer:
@@ -692,6 +696,7 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
