@@ -9,9 +9,11 @@ public class PaintByClick : MonoBehaviour
     [SerializeField]
     GameObject[] slider_array;
     bool mixActive;
+    Color BucketColor;
     // Start is called before the first frame update
     void Start()
     {
+        BucketColor = new Color();
         mixActive = false;
         slider_array = GameObject.FindGameObjectsWithTag("slider");
         for(int i = 0; i < slider_array.Length; i++)
@@ -45,6 +47,11 @@ public class PaintByClick : MonoBehaviour
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().color = cur_color;
                 }
 
+                if (hit.collider != null && hit.transform.tag == "eraser")
+                {
+                    cur_color= new Color(1f ,1f, 1f, 1f);
+                }
+
                 if (hit.collider != null && hit.transform.tag == "uncolor")
                 {
                     if (!mixActive) {
@@ -52,21 +59,23 @@ public class PaintByClick : MonoBehaviour
                         {
                             slider_array[i].SetActive(true);
                         }
-
+                        mixActive = true;
                     }
                     else
                     {
-                        cur_color = hit.collider.gameObject.GetComponent<newMixedColor>().curr;
+                        Debug.Log("get cuur color:" + hit.collider.gameObject.GetComponent<newMixedColor>().getCurrColor().ToString());
+                        BucketColor = hit.collider.gameObject.GetComponent<newMixedColor>().getCurrColor();
+                        cur_color = BucketColor;
+                       // BucketColor = new Color(1, 0, 0, 1);
+                        hit.collider.gameObject.GetComponent<Renderer>().material.SetColor("_Color", BucketColor);
                         for (int i = 0; i < slider_array.Length; i++)
                         {
                             slider_array[i].SetActive(false);
                         }
+                        mixActive = false;
                     }
                 }
             }
-
         }
-
-
     }
 }
