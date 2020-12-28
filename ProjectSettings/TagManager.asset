@@ -11,6 +11,7 @@ TagManager:
   - bucket
   - slider
   - eraser
+  - final_score
   layers:
   - Default
   - TransparentFX
