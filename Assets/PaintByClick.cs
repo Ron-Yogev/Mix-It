@@ -10,9 +10,15 @@ public class PaintByClick : MonoBehaviour
     GameObject[] slider_array;
     bool mixActive;
     Color BucketColor;
+    [SerializeField] GameObject eraserIcon = null;
+    [SerializeField] GameObject brushIcon = null;
+
     // Start is called before the first frame update
     void Start()
     {
+        Cursor.visible = false;
+        brushIcon.GetComponent<FollowTheCurser>().setFollow(true);
+
         BucketColor = new Color();
         mixActive = false;
         slider_array = GameObject.FindGameObjectsWithTag("slider");
@@ -20,6 +26,11 @@ public class PaintByClick : MonoBehaviour
         {
             slider_array[i].SetActive(false);
         }
+    }
+
+    public void resetCurrColor()
+    {
+        this.cur_color = new Color(1f,1f,1f,1f);
     }
 
     // Update is called once per frame
@@ -45,11 +56,6 @@ public class PaintByClick : MonoBehaviour
                 if(hit.collider !=null && hit.transform.tag == "paintable")
                 {
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().color = cur_color;
-                }
-
-                if (hit.collider != null && hit.transform.tag == "eraser")
-                {
-                    cur_color= new Color(1f ,1f, 1f, 1f);
                 }
 
                 if (hit.collider != null && hit.transform.tag == "uncolor")
@@ -78,4 +84,6 @@ public class PaintByClick : MonoBehaviour
             }
         }
     }
+
+
 }
