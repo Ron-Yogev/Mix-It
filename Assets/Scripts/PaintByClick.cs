@@ -50,7 +50,6 @@ public class PaintByClick : MonoBehaviour
     void Update()
     {
         isRunning = clock.GetComponent<CountBackTime>().isRunning();
-        Debug.Log("isRunning:" + isRunning);
         if (isRunning) {
             if (Input.GetMouseButtonDown(0))
             {
@@ -138,7 +137,7 @@ public class PaintByClick : MonoBehaviour
         isRunning = false;
     }
     /*
-     * Function that hide/oncover all the sliders
+     * Function that oncover all the sliders
      */
     public void openSliders()
     {
@@ -151,6 +150,9 @@ public class PaintByClick : MonoBehaviour
   
     }
 
+    /*
+     * Function that hide all the sliders
+     */
     public void closeSliders()
     {
         for(int i = 0; i < slider_array.Length; i++)

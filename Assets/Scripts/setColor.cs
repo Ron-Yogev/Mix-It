@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * A class designed to test color changes
+ */
 public class setColor : MonoBehaviour
 {
     [SerializeField] 

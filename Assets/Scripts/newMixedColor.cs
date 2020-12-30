@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/*
+ * A class designed to combine the colors by inserting the methods into the sliders
+ */
 public class newMixedColor : MonoBehaviour
 {
     private Color curr;
@@ -11,45 +14,46 @@ public class newMixedColor : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //initializing the class fields
         R = 1f;
         G = 1f;
         B = 1f;
         curr = new Color(R, G, B , 1);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("GetCurrColor function" + curr.ToString());
-        //curr = new Color(R/255f, G/255f, B/255f);
-    }
-
+    /*
+     * A function that is inserted into the red slider and changes the red color channel in the current color 
+     */
     public void addRedColor(float add)
     {
-        Debug.Log("addRed  "+ (float)add);
         R = add;
         curr = new Color(R , G, B, 1);
     }
 
+    /*
+     * A function that is inserted into the green slider and changes the red color channel in the current color 
+     */
     public void addGreenColor(float add)
     {
-        Debug.Log("addGreen  "+(float)add );
         G = add;
         curr = new Color(R, G , B, 1);
 
     }
 
+    /*
+     * A function that is inserted into the blue slider and changes the red color channel in the current color 
+     */
     public void addBlueColor(float add)
     {
-        Debug.Log("addBlue  "+ (float)add);
         B = add;
         curr = new Color(R, G, B , 1);
     }
 
+    /*
+     * Function that returns the current color
+     */
     public Color getCurrColor()
     {
-        Debug.Log("R:" + R + ", G:" + G + ",B:" + B);
-        Debug.Log("GetCurrColor function" + curr.ToString());
         return curr;
     }
 }

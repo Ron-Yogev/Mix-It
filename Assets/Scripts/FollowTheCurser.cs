@@ -9,17 +9,14 @@ public class FollowTheCurser : MonoBehaviour
     [SerializeField]
     GameObject follower = null;
     [SerializeField]
-    bool isPointer = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
+    bool isPointer = false; 
 
     // Update is called once per frame
     void Update()
     {
         if (follow)
         {
+            // If the player does not combine colors, we will adjust the icon displayed on the screen
             if (!isPointer)
             {
                 Vector3 temp = Input.mousePosition;
@@ -27,8 +24,9 @@ public class FollowTheCurser : MonoBehaviour
                 this.transform.position = Camera.main.ScreenToWorldPoint(temp);
                 this.transform.position += gameObject.transform.localScale / 2;
             }
+            // If the player combines colors, we will adjust the icon displayed on the screen
             else
-            {
+            { 
                 Vector3 temp = Input.mousePosition;
                 temp.z = 16f; // Set this to be the distance you want the object to be placed in front of the camera.
                 this.transform.position = Camera.main.ScreenToWorldPoint(temp);
@@ -38,6 +36,11 @@ public class FollowTheCurser : MonoBehaviour
         }
     }
 
+    /*
+     * Function that gets a boolean variable so that if its true - the gameObject is active,
+     * else - the gameObject is not active,
+     * and assign the argument to 'follow' variable 
+     */
     public void setFollow(bool follow)
     {
         if (!follow)

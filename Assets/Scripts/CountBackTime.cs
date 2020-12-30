@@ -29,7 +29,6 @@ public class CountBackTime : MonoBehaviour
      */
     private void Update()
     {
-        Debug.Log("running Clock:" + running);
         float t = Time.time - startTime;
         int time_left = total_sec - (int)t;
         if (time_left >= 0 && running)
@@ -42,6 +41,7 @@ public class CountBackTime : MonoBehaviour
 
             text.text = minutes + ":" + seconds;
         }
+        // if the time is over - show the score to the player
         else
         {
             showScore.setScore();
