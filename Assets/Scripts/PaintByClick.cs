@@ -97,7 +97,6 @@ public class PaintByClick : MonoBehaviour
                 buttons[i].interactable = false;
             }
 
-
         }
     }
     /*

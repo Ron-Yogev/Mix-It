@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2109882711697750625}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdea5597942e02e49948046fa1668b12, type: 3}
+  m_Script: {fileID: 11500000, guid: ddf4e1d53849139479691d7ca5c5c502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  curr: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1001 &8634149504406929312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -93,7 +92,7 @@ PrefabInstance:
     - target: {fileID: 7680157024217286081, guid: ada1f22d909ec3e4dbc23b87e17c6670,
         type: 3}
       propertyPath: m_Name
-      value: Color2
+      value: Color2 Variant
       objectReference: {fileID: 0}
     - target: {fileID: 7680157024217286081, guid: ada1f22d909ec3e4dbc23b87e17c6670,
         type: 3}
