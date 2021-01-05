@@ -9,44 +9,52 @@ using UnityEngine.UI;
 public class newMixedColor : MonoBehaviour
 {
     private Color curr;
-    private float R, G, B;
+    private float C, M, Y;
 
     // Start is called before the first frame update
     void Start()
     {
         //initializing the class fields
-        R = 1f;
-        G = 1f;
-        B = 1f;
-        curr = new Color(R, G, B , 1);
+        C = 0f;
+        M = 0f;
+        Y = 0f;
+        curr = CMYKtoRGB(C, M, Y);
+    }
+
+    private void Update()
+    {
+        Debug.Log("curr:"+curr.ToString());
     }
 
     /*
      * A function that is inserted into the red slider and changes the red color channel in the current color 
      */
-    public void addRedColor(float add)
+    public void addCyanColor(float add)
     {
-        R = add;
-        curr = new Color(R , G, B, 1);
+        Debug.Log("Cyan:" + add);
+        C = -1f * add;
+        curr = CMYKtoRGB(C, M, Y);
     }
 
     /*
      * A function that is inserted into the green slider and changes the red color channel in the current color 
      */
-    public void addGreenColor(float add)
+    public void addMagentaColor(float add)
     {
-        G = add;
-        curr = new Color(R, G , B, 1);
+        Debug.Log("Nagenta:" + add);
+        M = -1f * add;
+        curr = CMYKtoRGB(C, M, Y);
 
     }
 
     /*
      * A function that is inserted into the blue slider and changes the red color channel in the current color 
      */
-    public void addBlueColor(float add)
+    public void addYellowColor(float add)
     {
-        B = add;
-        curr = new Color(R, G, B , 1);
+        Debug.Log("Yellow:" + add);
+        Y = -1f * add;
+        curr = CMYKtoRGB(C, M, Y);
     }
 
     /*
@@ -55,5 +63,13 @@ public class newMixedColor : MonoBehaviour
     public Color getCurrColor()
     {
         return curr;
+    }
+
+    /*
+ * Function that turns CMYK color into RGB color
+ */
+    public Color CMYKtoRGB(float C, float M, float Y)
+    {
+        return new Color(1f + C, 1f + M, 1f + Y);
     }
 }

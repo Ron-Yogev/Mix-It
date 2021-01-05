@@ -12,6 +12,19 @@ TagManager:
   - slider
   - eraser
   - final_score
+  - currColor
+  - 1Arrow
+  - 2Arrow
+  - 3arrow
+  - 3Arrow
+  - 4Arrow
+  - pickColor
+  - 5Arrow
+  - 6Arrow
+  - 7Arrow
+  - 8Arrow
+  - 9Arrow
+  - 10Arrow
   layers:
   - Default
   - TransparentFX

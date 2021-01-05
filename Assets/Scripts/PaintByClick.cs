@@ -6,7 +6,8 @@ using TMPro;
 
 public class PaintByClick : MonoBehaviour
 {
-    [SerializeField] private Color cur_color = new Color(); 
+    [SerializeField] private Color cur_color = new Color();
+    private Color temp_curr = new Color();
     [SerializeField] private Vector3 mouse_pos;
     [SerializeField]
     GameObject[] slider_array;
@@ -16,17 +17,20 @@ public class PaintByClick : MonoBehaviour
     [SerializeField] GameObject brushIcon = null;
     [SerializeField] TextMeshProUGUI clock = null;
     [SerializeField] List<Button> buttons = null;
-    private bool isRunning;
+    [SerializeField] bool isTutorial = false;
+    private bool isRunning=false;
     private bool onErase = false;
     private bool onPointer = false;
+    GameObject image_curr_color;
 
     // Start is called before the first frame update
     void Start()
     {
+
         brushIcon.GetComponent<FollowTheCurser>().setFollow(true); // put the brush icon
         Cursor.visible = false; // hide the cursor
-        isRunning = true;
-
+        isRunning = false;
+        image_curr_color = GameObject.FindGameObjectWithTag("currColor");
         BucketColor = new Color();
         mixActive = false;
         slider_array = GameObject.FindGameObjectsWithTag("slider");
@@ -49,8 +53,11 @@ public class PaintByClick : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isRunning = clock.GetComponent<CountBackTime>().isRunning();
-        if (isRunning) {
+        if (!isTutorial)
+        {
+            isRunning = clock.GetComponent<CountBackTime>().isRunning();
+        }
+        if (isRunning || isTutorial) {
             if (Input.GetMouseButtonDown(0))
             {
                 //get the position of the click
@@ -63,12 +70,22 @@ public class PaintByClick : MonoBehaviour
                     if (hit.collider != null && hit.transform.tag == "color" && !onErase && !onPointer)
                     {
                         cur_color = hit.collider.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
+                        temp_curr = cur_color;
+                        image_curr_color.GetComponent<Image>().color = cur_color;
                     }
 
                     // when the player click on one of the peaces on the canvas - the peace is colored
                     if (hit.collider != null && hit.transform.tag == "paintable" && !onPointer)
                     {
-                        hit.collider.gameObject.GetComponent<SpriteRenderer>().color = cur_color;
+                        if (onErase)
+                        {
+                            hit.collider.gameObject.GetComponent<SpriteRenderer>().color = cur_color;
+
+                        }
+                        else
+                        {
+                            hit.collider.gameObject.GetComponent<SpriteRenderer>().color = temp_curr;
+                        }
                     }
 
                     // when the player click on one of the uncolor spheres - the spehre is colored
@@ -76,14 +93,20 @@ public class PaintByClick : MonoBehaviour
                     {
                         if (mixActive)
                         {
+                            Debug.Log("asdasd");
                             BucketColor = hit.collider.gameObject.GetComponent<newMixedColor>().getCurrColor();
+                            Debug.Log(BucketColor.ToString());
                             cur_color = BucketColor;
+                            temp_curr = cur_color;
+                            image_curr_color.GetComponent<Image>().color = cur_color;
                             hit.collider.gameObject.GetComponent<Renderer>().material.SetColor("_Color", BucketColor);
 
                         }
                         else
                         {
                             cur_color = hit.collider.gameObject.GetComponent<Renderer>().material.GetColor("_Color");
+                            temp_curr = cur_color;
+                            image_curr_color.GetComponent<Image>().color = cur_color;
                         }
                     }
                 }
@@ -160,6 +183,8 @@ public class PaintByClick : MonoBehaviour
         }
         mixActive = false;
     }
+
+
 
   
 
