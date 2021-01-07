@@ -23,7 +23,6 @@ public class newMixedColor : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("curr:"+curr.ToString());
     }
 
     /*
@@ -31,7 +30,6 @@ public class newMixedColor : MonoBehaviour
      */
     public void addCyanColor(float add)
     {
-        Debug.Log("Cyan:" + add);
         C = -1f * add;
         curr = CMYKtoRGB(C, M, Y);
     }
@@ -41,7 +39,6 @@ public class newMixedColor : MonoBehaviour
      */
     public void addMagentaColor(float add)
     {
-        Debug.Log("Nagenta:" + add);
         M = -1f * add;
         curr = CMYKtoRGB(C, M, Y);
 
@@ -52,7 +49,6 @@ public class newMixedColor : MonoBehaviour
      */
     public void addYellowColor(float add)
     {
-        Debug.Log("Yellow:" + add);
         Y = -1f * add;
         curr = CMYKtoRGB(C, M, Y);
     }

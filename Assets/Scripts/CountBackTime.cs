@@ -44,8 +44,9 @@ public class CountBackTime : MonoBehaviour
         // if the time is over - show the score to the player
         else
         {
-            showScore.setScore();
             running = false;
+            showScore.setScore();
+            
         }
     }
 

@@ -176,6 +176,7 @@ MonoBehaviour:
   - {fileID: 1187749296}
   - {fileID: 847367478}
   - {fileID: 80912394}
+  isTutorial: 0
 --- !u!1 &10961001
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -844,6 +846,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1051,8 +1054,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a567b7620f09054f823e3777086da5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minutes: 10
-  seconds: 0
+  minutes: 0
+  seconds: 30
   text: {fileID: 261249004}
 --- !u!1001 &276161221
 PrefabInstance:
@@ -1706,6 +1709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1897,12 +1901,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &528237148 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1919908718007682127, guid: 5e3325b678a096047bb968eb7c461acd,
-    type: 3}
-  m_PrefabInstance: {fileID: 276161221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &544583028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2133,6 +2131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -2709,6 +2708,7 @@ Light:
   m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
 --- !u!4 &705507995
@@ -2844,7 +2844,7 @@ LightingSettings:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
-  serializedVersion: 2
+  serializedVersion: 3
   m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
@@ -2883,7 +2883,7 @@ LightingSettings:
   m_PVREnvironmentReferencePointCount: 2048
   m_LightProbeSampleCountMultiplier: 4
   m_PVRBounces: 2
-  m_PVRRussianRouletteStartBounce: 2
+  m_PVRMinBounces: 1
   m_PVREnvironmentMIS: 0
   m_PVRFilteringMode: 2
   m_PVRDenoiserTypeDirect: 0
@@ -2973,9 +2973,9 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 807190914}
   m_CullTransparentMesh: 0
---- !u!23 &818667723 stripped
+--- !u!23 &809477942 stripped
 MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 3534232648954188416, guid: 5e3325b678a096047bb968eb7c461acd,
+  m_CorrespondingSourceObject: {fileID: 1919908718007682127, guid: 5e3325b678a096047bb968eb7c461acd,
     type: 3}
   m_PrefabInstance: {fileID: 276161221}
   m_PrefabAsset: {fileID: 0}
@@ -3037,6 +3037,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
 --- !u!223 &829241971
 Canvas:
   m_ObjectHideFlags: 0
@@ -3304,6 +3305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4152,6 +4154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4322,13 +4325,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score_txt: {fileID: 544583029}
   rend_3d:
-  - {fileID: 528237148}
-  - {fileID: 1419286456}
-  - {fileID: 818667723}
-  - {fileID: 818667723}
-  - {fileID: 818667723}
-  - {fileID: 818667723}
-  - {fileID: 818667723}
+  - {fileID: 809477942}
+  - {fileID: 1983245472}
+  - {fileID: 1611615450}
+  - {fileID: 1611615450}
+  - {fileID: 1611615450}
+  - {fileID: 1611615450}
+  - {fileID: 1611615450}
   rend_2d:
   - {fileID: 2080433984}
   - {fileID: 1239456828}
@@ -4785,6 +4788,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Navigation:
     m_Mode: 3
+    m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -4845,12 +4849,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!23 &1419286456 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: 1053749423867383506, guid: 5e3325b678a096047bb968eb7c461acd,
-    type: 3}
-  m_PrefabInstance: {fileID: 276161221}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1431259995 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2739464124851490445, guid: 80d362a1e0a30da49a57e05429ae26ed,
@@ -5041,6 +5039,12 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!23 &1611615450 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 3534232648954188416, guid: 5e3325b678a096047bb968eb7c461acd,
+    type: 3}
+  m_PrefabInstance: {fileID: 276161221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1664285576
 GameObject:
   m_ObjectHideFlags: 0
@@ -5944,6 +5948,12 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.053772915
   m_Center: {x: -0.12705475, y: -0.17125052, z: 0.00000017747963}
+--- !u!23 &1983245472 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1053749423867383506, guid: 5e3325b678a096047bb968eb7c461acd,
+    type: 3}
+  m_PrefabInstance: {fileID: 276161221}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2080433981
 GameObject:
   m_ObjectHideFlags: 0
