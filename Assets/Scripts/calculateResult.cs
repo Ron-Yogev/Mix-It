@@ -14,6 +14,7 @@ public class calculateResult : MonoBehaviour
     [SerializeField] List<SpriteRenderer> rend_2d = null; // the 2d objets for compare their color values
     [SerializeField] int size = 0;
     [SerializeField] const float MAX_SCORE = 100;
+    [SerializeField] int threshold = 80;
 
     const int allchannels = 768;
     private float score = MAX_SCORE;
@@ -47,7 +48,16 @@ public class calculateResult : MonoBehaviour
      */
     public void setScore()
     {
-        score_txt.SetText("Your score is :" + getScore());
+        int num = getScore();
+        if(num >= threshold)
+        {
+            score_txt.color = new Color(60/255f, 179/255f, 113/255f, 1f);
+        }
+        else
+        {
+            score_txt.color = new Color(220/255f, 20/255f, 60/255f,1f);
+        }
+        score_txt.SetText("Your score is :" + num);
     }
 
 }

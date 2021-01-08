@@ -1508,8 +1508,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'Current Color:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d0e0f7aea19f2c144b46ea646c23049a, type: 2}
+  m_sharedMaterial: {fileID: -7495570667960202282, guid: d0e0f7aea19f2c144b46ea646c23049a,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1533,8 +1534,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 15
-  m_fontSizeBase: 15
+  m_fontSize: 14
+  m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1919,6 +1920,7 @@ MonoBehaviour:
   - {fileID: 1466076757}
   - {fileID: 2072662781}
   size: 12
+  threshold: 90
 --- !u!4 &320960888
 Transform:
   m_ObjectHideFlags: 0
@@ -2656,7 +2658,7 @@ GameObject:
   - component: {fileID: 609317479}
   m_Layer: 0
   m_Name: face
-  m_TagString: Untagged
+  m_TagString: paintable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2750,8 +2752,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.38236395
-  m_Center: {x: 1.1925062, y: -5.2959304e-12, z: -0.049014866}
+  m_Radius: 0.40149972
+  m_Center: {x: 1.1925062, y: -5.0886075e-12, z: -0.06815043}
 --- !u!65 &609317480
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2763,8 +2765,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.6953175, y: 0.7049506, z: 0.120678894}
-  m_Center: {x: 0.083072826, y: 0.7945883, z: 0.03965791}
+  m_Size: {x: 2.6953175, y: 0.7049506, z: 0.25991705}
+  m_Center: {x: 0.083072826, y: 0.7945883, z: -0.02996118}
 --- !u!65 &609317481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2776,8 +2778,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.9234942, y: 1.4943614, z: 0.211521}
-  m_Center: {x: -1.1982841, y: -0.18229498, z: -0.0057816836}
+  m_Size: {x: 0.9234945, y: 1.4943614, z: 0.37983635}
+  m_Center: {x: -1.198284, y: -0.18229498, z: -0.0899402}
 --- !u!65 &609317482
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2789,8 +2791,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.8692946, y: 0.7394498, z: 0.32371005}
-  m_Center: {x: -0.058478676, y: -0.7958267, z: -0.061857358}
+  m_Size: {x: 2.8692946, y: 0.744745, z: 0.1184865}
+  m_Center: {x: -0.058478512, y: -0.79318696, z: -0.08762963}
 --- !u!1 &614469439
 GameObject:
   m_ObjectHideFlags: 0
@@ -4991,8 +4993,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.30018064, y: 1.0248675, z: 0.4149616}
-  m_Center: {x: -0.37490934, y: 0.0925672, z: -0.107488334}
+  m_Size: {x: 0.25638238, y: 1.0248675, z: 0.4149616}
+  m_Center: {x: -0.39680842, y: 0.092567205, z: -0.10748833}
 --- !u!65 &1247660367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5004,8 +5006,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0088996, y: 0.32388917, z: 0.24861427}
-  m_Center: {x: -0.020550411, y: 0.4430583, z: -0.024314737}
+  m_Size: {x: 1.0088996, y: 0.302666, z: 0.24861427}
+  m_Center: {x: -0.02055041, y: 0.4536702, z: -0.024314737}
 --- !u!1 &1297831501
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,8 +8010,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 1de7282bdda97d24c849c0a7d65f6d08, type: 2}
+  m_sharedMaterial: {fileID: 4118296853123435309, guid: 1de7282bdda97d24c849c0a7d65f6d08,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8033,8 +8036,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34
+  m_fontSizeBase: 34
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -8092,7 +8095,7 @@ RectTransform:
   m_GameObject: {fileID: 1958833798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.0783, y: 1.0783, z: 1.0783}
   m_Children: []
   m_Father: {fileID: 1921555849}
   m_RootOrder: 2
