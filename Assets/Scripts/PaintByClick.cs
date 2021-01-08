@@ -84,6 +84,8 @@ public class PaintByClick : MonoBehaviour
                         }
                         else
                         {
+                            Debug.Log("faceeeeeeeeeeeeeeeeeeeeeeeeeee");
+
                             hit.collider.gameObject.GetComponent<SpriteRenderer>().color = temp_curr;
                         }
                     }
@@ -93,9 +95,7 @@ public class PaintByClick : MonoBehaviour
                     {
                         if (mixActive)
                         {
-                            Debug.Log("asdasd");
                             BucketColor = hit.collider.gameObject.GetComponent<newMixedColor>().getCurrColor();
-                            Debug.Log(BucketColor.ToString());
                             cur_color = BucketColor;
                             temp_curr = cur_color;
                             image_curr_color.GetComponent<Image>().color = cur_color;
