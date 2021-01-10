@@ -35,7 +35,7 @@ public class CountBackTime : MonoBehaviour
         int time_left = total_sec - (int)t;
         if (time_left >= 0 && running)
         {
-            if (time_left <= 60 && time_left > 10)
+            if (time_left <= 30 && time_left > 10)
             {
                 text.color = new Color(1f, 165 / 255f, 0f, 1f);
             }

@@ -26,6 +26,7 @@ public class AnimationController : MonoBehaviour
     [SerializeField] Button combine_button;
     [SerializeField] Button paint_button;
     [SerializeField] Button finish_button;
+    [SerializeField] Button home_button;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +35,7 @@ public class AnimationController : MonoBehaviour
         combine_button.interactable = false;
         paint_button.interactable = false;
         finish_button.interactable = false;
+        home_button.interactable = true;
     }
 
     // Update is called once per frame
@@ -167,6 +169,7 @@ public class AnimationController : MonoBehaviour
         {
             animations[9].SetActive(false);
             finish_button.interactable = false;
+            home_button.interactable = false;
             Cursor.visible = true;
         }
     }

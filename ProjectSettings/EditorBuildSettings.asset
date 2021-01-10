@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BallLevel.unity
     guid: 47149a695a9f2fa488a4df82b6ea0485
+  - enabled: 1
+    path: Assets/Scenes/FinishScene.unity
+    guid: ab81c7fdda80f084aa6d0e2935d82186
   m_configObjects: {}

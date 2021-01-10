@@ -13,8 +13,9 @@ public class PaintByClick : MonoBehaviour
     GameObject[] slider_array;
     bool mixActive;
     Color BucketColor;
-    [SerializeField] GameObject eraserIcon = null;
-    [SerializeField] GameObject brushIcon = null;
+    [SerializeField] Texture2D brushIcon = null;
+    [SerializeField] Texture2D erasehIcon = null;
+    [SerializeField] Texture2D pointerhIcon = null;
     [SerializeField] TextMeshProUGUI clock = null;
     [SerializeField] List<Button> buttons = null;
     [SerializeField] bool isTutorial = false;
@@ -26,9 +27,10 @@ public class PaintByClick : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        brushIcon.GetComponent<FollowTheCurser>().setFollow(true); // put the brush icon
-        Cursor.visible = false; // hide the cursor
+        int h = brushIcon.height;
+        int w = brushIcon.width;
+        Vector2 tmp = new Vector2(w * 0.2f, h * 0.8f);
+        Cursor.SetCursor(brushIcon, tmp, CursorMode.ForceSoftware);
         isRunning = false;
         image_curr_color = GameObject.FindGameObjectWithTag("currColor");
         BucketColor = new Color();
@@ -123,6 +125,7 @@ public class PaintByClick : MonoBehaviour
 
         }
     }
+
     /*
      * Functino that assign true to the onErease field 
      */
@@ -145,6 +148,7 @@ public class PaintByClick : MonoBehaviour
     {
         SoundManagerScript.PlaySound("click");
         onPointer = true;
+
     }
     /*
      * Functino that assign false to the onPointer field
@@ -171,7 +175,7 @@ public class PaintByClick : MonoBehaviour
             slider_array[i].SetActive(true);
         }
         mixActive = true;
-  
+        
     }
 
     /*
@@ -187,8 +191,28 @@ public class PaintByClick : MonoBehaviour
         mixActive = false;
     }
 
+    public void setEraseIcon()
+    {   
+        int h = erasehIcon.height;
+        int w = erasehIcon.width;
+        Vector2 tmp = new Vector2(w*0.2f, h*0.8f);
+        Cursor.SetCursor(erasehIcon, tmp, CursorMode.ForceSoftware);
+    }
 
+    public void setBrushIcon()
+    {
+        int h = brushIcon.height;
+        int w = brushIcon.width;
+        Vector2 tmp = new Vector2(w * 0.2f, h * 0.8f);
+        Cursor.SetCursor(brushIcon, tmp, CursorMode.ForceSoftware);
+    }
 
-  
+    public void setPointerIcon()
+    {
+        int h =pointerhIcon.height;
+        int w = pointerhIcon.width;
+        Vector2 tmp = new Vector2(w * 0.2f, h * 0.2f);
+        Cursor.SetCursor(pointerhIcon, tmp, CursorMode.ForceSoftware);
+    }
 
 }
