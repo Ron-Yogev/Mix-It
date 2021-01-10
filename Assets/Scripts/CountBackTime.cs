@@ -14,6 +14,7 @@ public class CountBackTime : MonoBehaviour
     private bool running = true;
     calculateResult showScore;
     private bool increase_font_size = false;
+    private bool play_end = false; 
 
     // Start is called before the first frame update
     void Start()
@@ -34,14 +35,14 @@ public class CountBackTime : MonoBehaviour
         int time_left = total_sec - (int)t;
         if (time_left >= 0 && running)
         {
-            if (time_left <= 60 && time_left >10)
+            if (time_left <= 60 && time_left > 10)
             {
-                text.color = new Color(1f,165/255f,0f,1f);
+                text.color = new Color(1f, 165 / 255f, 0f, 1f);
             }
             if (time_left <= 10 && !increase_font_size)
             {
                 text.color = Color.red;
-                text.fontSize += text.fontSize *0.1f ;
+                text.fontSize += text.fontSize * 0.1f;
                 increase_font_size = true;
             }
             string seconds = ((time_left) % 60).ToString("f0");
@@ -55,9 +56,13 @@ public class CountBackTime : MonoBehaviour
         // if the time is over - show the score to the player
         else
         {
-            running = false;
-            showScore.setScore();
-            
+            if (!play_end)
+            {
+                running = false;
+                showScore.setScore();
+                play_end = true;
+
+            }
         }
     }
 

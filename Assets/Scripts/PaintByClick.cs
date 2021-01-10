@@ -79,13 +79,13 @@ public class PaintByClick : MonoBehaviour
                     {
                         if (onErase)
                         {
+                            SoundManagerScript.PlaySound("erase");
                             hit.collider.gameObject.GetComponent<SpriteRenderer>().color = cur_color;
 
                         }
                         else
                         {
-                            Debug.Log("faceeeeeeeeeeeeeeeeeeeeeeeeeee");
-
+                            SoundManagerScript.PlaySound("paint");
                             hit.collider.gameObject.GetComponent<SpriteRenderer>().color = temp_curr;
                         }
                     }
@@ -95,6 +95,7 @@ public class PaintByClick : MonoBehaviour
                     {
                         if (mixActive)
                         {
+                            SoundManagerScript.PlaySound("combine");
                             BucketColor = hit.collider.gameObject.GetComponent<newMixedColor>().getCurrColor();
                             cur_color = BucketColor;
                             temp_curr = cur_color;
@@ -127,6 +128,7 @@ public class PaintByClick : MonoBehaviour
      */
     public void setOnErase()
     {
+        SoundManagerScript.PlaySound("click");
         onErase = true;
     }
     /*
@@ -141,6 +143,7 @@ public class PaintByClick : MonoBehaviour
      */
     public void setOnPointer()
     {
+        SoundManagerScript.PlaySound("click");
         onPointer = true;
     }
     /*
@@ -163,7 +166,6 @@ public class PaintByClick : MonoBehaviour
      */
     public void openSliders()
     {
-
         for (int i = 0; i < slider_array.Length; i++)
         {
             slider_array[i].SetActive(true);
@@ -177,7 +179,8 @@ public class PaintByClick : MonoBehaviour
      */
     public void closeSliders()
     {
-        for(int i = 0; i < slider_array.Length; i++)
+        SoundManagerScript.PlaySound("click");
+        for (int i = 0; i < slider_array.Length; i++)
             {
             slider_array[i].SetActive(false);
         }

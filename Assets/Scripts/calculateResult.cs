@@ -62,26 +62,27 @@ public class calculateResult : MonoBehaviour
         int num = getScore();
         if(num >= threshold)
         {
+            SoundManagerScript.PlaySound("win");
             score_txt.color = new Color(60/255f, 179/255f, 113/255f, 1f);
             nextLevel_buttonTxt.text = "Next Level!";
         }
         else
         {
+            SoundManagerScript.PlaySound("lose");
             score_txt.color = new Color(220/255f, 20/255f, 60/255f,1f);
             nextLevel_buttonTxt.text = "Try Again";
         }
         score_txt.SetText("Your score is :" + num);
         if (size == 1)
         {
-            menu.SetActive(true);
+            nextLevel_buttonTxt.text = "Try Again";
+
 
         }
-        else
-        {
-            next.SetActive(true);
-        }
-        
-        
+        menu.SetActive(true);
+        next.SetActive(true);
+
+
     }
 
     public void finishLevel()
