@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 /*
  * A class designed to calculate a player's score by color matching percentage
@@ -15,9 +17,18 @@ public class calculateResult : MonoBehaviour
     [SerializeField] int size = 0;
     [SerializeField] const float MAX_SCORE = 100;
     [SerializeField] int threshold = 80;
+    [SerializeField] string nextLevel = null;
+    [SerializeField] Text nextLevel_buttonTxt = null;
+    [SerializeField] GameObject next = null, menu = null;
 
     const int allchannels = 768;
     private float score = MAX_SCORE;
+
+    public void Start()
+    {
+        next.SetActive(false);
+        menu.SetActive(false);
+    }
 
     /*
      * A function that goes through all 2 lists so that each member from one list matches the other element in the same index,
@@ -52,12 +63,44 @@ public class calculateResult : MonoBehaviour
         if(num >= threshold)
         {
             score_txt.color = new Color(60/255f, 179/255f, 113/255f, 1f);
+            nextLevel_buttonTxt.text = "Next Level!";
         }
         else
         {
             score_txt.color = new Color(220/255f, 20/255f, 60/255f,1f);
+            nextLevel_buttonTxt.text = "Try Again";
         }
         score_txt.SetText("Your score is :" + num);
+        if (size == 1)
+        {
+            menu.SetActive(true);
+
+        }
+        else
+        {
+            next.SetActive(true);
+        }
+        
+        
+    }
+
+    public void finishLevel()
+    {
+        int num = getScore();
+        if (num >= threshold)
+        {
+            SceneManager.LoadScene(nextLevel);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+    }
+
+    public void finishToMenu()
+    {
+        Cursor.visible = true;
+        SceneManager.LoadScene("Menu");
     }
 
 }

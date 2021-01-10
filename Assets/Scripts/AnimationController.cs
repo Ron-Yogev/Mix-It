@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AnimationController : MonoBehaviour
@@ -165,7 +166,13 @@ public class AnimationController : MonoBehaviour
         if (anim10)
         {
             animations[9].SetActive(false);
+            finish_button.interactable = false;
+            Cursor.visible = true;
         }
     }
 
+    public void backToManu()
+    {
+        SceneManager.LoadScene("Menu");
+    }
 }

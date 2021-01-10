@@ -6,6 +6,27 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: 2d549ac5801bb02429e677ddd120d110
+  - enabled: 1
+    path: Assets/Scenes/TreeLevel.unity
+    guid: 341653c35bdce5843aea8094d77144d3
+  - enabled: 1
+    path: Assets/Scenes/PeachLevel.unity
+    guid: d9efe9910ffda614588cdcc82f4efa3d
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 553b8233ba4fee14794ecc1f0c74ed4a
+  - enabled: 1
     path: Assets/Scenes/FlowerLevel.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/CatLevel.unity
+    guid: bacbb186ce87cc44d86dee00d39cbc0c
+  - enabled: 1
+    path: Assets/Scenes/BalloonLevel.unity
+    guid: 5191789549358e642b1179a4a2754b78
+  - enabled: 1
+    path: Assets/Scenes/BallLevel.unity
+    guid: 47149a695a9f2fa488a4df82b6ea0485
   m_configObjects: {}
