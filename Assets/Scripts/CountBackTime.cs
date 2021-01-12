@@ -8,13 +8,15 @@ public class CountBackTime : MonoBehaviour
     [SerializeField] int minutes = 1;
     [SerializeField] int seconds = 30;
     [SerializeField]
-    TMP_Text text;
+    TextMeshProUGUI text;
+    
     int total_sec;
     private float startTime;
     private bool running = true;
     calculateResult showScore;
     private bool increase_font_size = false;
-    private bool play_end = false; 
+    private bool play_end = false;
+    private bool clockTicking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -37,10 +39,16 @@ public class CountBackTime : MonoBehaviour
         {
             if (time_left <= 30 && time_left > 10)
             {
-                text.color = new Color(1f, 165 / 255f, 0f, 1f);
+                text.faceColor = new Color32(255, 165, 0, 255);
+                text.color = new Color32(255, 165 , 0, 255);
             }
             if (time_left <= 10 && !increase_font_size)
             {
+                if (!clockTicking)
+                {
+                    SoundManagerScript.PlaySound("clockTicking");
+                    clockTicking = true;
+                }
                 text.color = Color.red;
                 text.fontSize += text.fontSize * 0.1f;
                 increase_font_size = true;

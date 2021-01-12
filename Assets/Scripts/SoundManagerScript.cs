@@ -22,7 +22,7 @@ public class SoundManagerScript : MonoBehaviour
         win = Resources.Load<AudioClip>("win");
         lose = Resources.Load<AudioClip>("lose");
         crowd_panik = Resources.Load<AudioClip>("crowd_panik");
-        countdown = Resources.Load<AudioClip>("countdown");
+        countdown = Resources.Load<AudioClip>("clockTicking");
         bk0 = Resources.Load<AudioClip>("background0");
         bk1 = Resources.Load<AudioClip>("background1");
         bk2 = Resources.Load<AudioClip>("background2");
@@ -31,6 +31,7 @@ public class SoundManagerScript : MonoBehaviour
         bk5 = Resources.Load<AudioClip>("background5");
         final_bk = Resources.Load<AudioClip>("final_level_background");
         menu_bk = Resources.Load<AudioClip>("MenuBackGround");
+
 
         audioSrc = GetComponent<AudioSource>();
 
@@ -101,7 +102,7 @@ public class SoundManagerScript : MonoBehaviour
             case "crowd_panik":
                 audioSrc.PlayOneShot(crowd_panik, SFX_v);
                 break;
-            case "countdown":
+            case "clockTicking":
                 audioSrc.PlayOneShot(countdown, SFX_v);
                 break;
             case "background0":

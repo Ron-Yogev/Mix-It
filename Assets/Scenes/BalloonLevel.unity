@@ -6692,7 +6692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minutes: 2
-  seconds: 30
+  seconds: 0
   text: {fileID: 1976875322}
 --- !u!222 &1976875324
 CanvasRenderer:
