@@ -39,11 +39,11 @@ Mix-It הוא משחק צביעה המאפשר למשתמש לצייר, לצבו
 
 ### תפריט ראשי
 
-![](images/menu.png)
+![](images/menu.jpeg)
 
 ### משחק לימוד
 
-![](images/tutorial.png)
+![](images/tutorial.jpeg)
 
 ### שלב במשחק
 
